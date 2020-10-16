@@ -1,0 +1,77 @@
+1)collections.Counter()
+from collections import Counter
+nshoes= input()
+shoesdict=Counter(input().split())
+costumers=int(input())
+guadagno=0
+for i in range(costumers):
+    a=(input().split(' '))
+    if shoesdict[a[0]]:
+        guadagno+=int(a[1])
+        shoesdict[a[0]]-=1
+print (guadagno)
+
+2)DefaultDict Tutorial
+from collections import*
+A=(input().split())
+lstA=[]
+lstB=[]
+for _ in range(int(A[0])):
+    lstA.append(input())
+for _ in range(int(A[1])):
+    lstB.append(input())
+d = defaultdict(list)
+#I associate,as a key, for each element of lstA its position incremented by 1 unit
+for i in range(len(lstA)):
+    d[lstA[i]].append(str(i+1))
+for i in lstB:
+    if i in lstA:
+#if an element of lstB is in lstA print all the position of that element that are stored in d
+        print(' '.join(d[i]))
+    else:
+        print(-1)
+
+3)Collections.OrderedDict()
+from collections import*
+a=int(input())
+dict=OrderedDict()
+for i in range(a):
+    lista = input().split(' ')
+    price = int(lista[-1])
+    name = " ".join(lista[:-1])
+    if name in dict.keys():
+        dict[name] += price
+    else:
+        dict[name] = price
+for n,p in dict.items():
+        print(n,p)
+     
+4)Word Order
+from collections import*
+a=int(input())
+lst=[]
+for i in range(a):
+    b = str(input().split())
+    lst.append(b)
+c = Counter(lst)
+print(len(c))
+d = list(c.values())
+for _ in d:
+    print(_,'',end='')
+  
+5)company logo
+#!/bin/python3
+import math
+import os
+import random
+import re
+import sys
+from collections import*
+if __name__ == '__main__':
+    s = (input())
+    a=(Counter(s)).items()
+    #I sort using a lambda function that takes as sorting key the number of occurrences (in discending order) as a priority and then the alphabetical order 
+    for string,occurrence in sorted(a, key=lambda c: (-c[1], c[0]))[:3]:
+        print(string, occurrence)
+       
+     
