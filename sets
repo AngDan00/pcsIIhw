@@ -1,0 +1,137 @@
+1)Introduction to Sets
+def average(array):
+    array=set(arr)
+    a=sum(array)
+    formula=a/len(array)
+    return formula
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
+
+2)No Idea
+n,m = input().split()
+n = input().split()
+setA = set(input().split())
+setB = set(input().split())
+#I inizialize felicità as 0
+felicità = 0
+#if a number is in A I increment felicità of 1 
+#if an element is in B then felicità decrements
+for i in n:
+    if i in setA:
+        felicità = felicità + 1
+    elif i in setB:
+        felicità = felicità - 1
+
+print(felicità)
+
+3)symmetric difference
+if __name__ == "__main__":
+    a = input()
+    b = set(map(int,input().split()))
+    c = input()
+    d = set(map(int,input().split()))
+    e = sorted(b.symmetric_difference(d))
+    for i in e:
+        print (i)
+
+4)Set .add()
+a=input()
+lst=[]
+for i in range(int(a)):
+    lst.append(input())
+b=set(lst)
+print(len(b)) 
+
+5)Set .discard(), .remove() & .pop()
+n = int(input())
+s = set(map(int, input().split()))
+b=int(input())
+for i in range(b):
+    c=input().split()
+    if c[0]=="pop":
+        s.pop()
+    elif c[0]=="remove":
+        s.remove(int(c[1]))
+    elif c[0]=="discard":
+        s.discard(int(c[1]))
+print (sum(s))
+    
+6)Set .union() Operation
+a=input()
+b=set(input().split())
+c=input()
+d=set(input().split())
+e=b.union(d)
+print (len(e))
+
+7)Set .intersection() Operation
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a=input()
+b=set(input().split())
+c=input()
+d=set(input().split())
+print (len(b.intersection(d)))
+
+8)Set .difference() Operation
+a=input()
+b=set(input().split())
+c=input()
+d=set(input().split())
+print(len(b.difference(d)))
+
+9)Set .symmetric_difference() Operation
+a=input()
+b=set(input().split())
+c=input()
+d=set(input().split())
+print(len(b.symmetric_difference(d)))
+
+10)Set Mutations
+length=int(input())
+s=set(map(int, input().split()))
+N=int(input())
+
+for i in range(N):
+    (p, q)=input().split()
+    s2=set(map(int, input().split()))
+    if p=='intersection_update':
+        s.intersection_update(s2)
+    elif p=='update':
+        s.update(s2)
+    elif p=='symmetric_difference_update':
+        s.symmetric_difference_update(s2)
+    elif p=='difference_update':
+        s.difference_update(s2)
+print (sum(s))
+
+11)The captain's room
+a = int(input())
+b = list(map(int, input().split()))
+myset = set(b)
+print(((sum(myset)*a)-(sum(b)))//(a-1))
+
+12)Check subset
+for i in range(int(input())):
+    a = input()
+    b = set(input().split())
+    c = input()
+    d = set(input().split())
+    print(b.issubset(d))
+    
+13)Check strict superset
+set1 = set(input().split())
+numset = int(input())
+for i in range(numset):
+    sets = set(input().split())
+    d=sets.intersection(set1)
+# if A is a strict superset of B, the lenght of B can't be > than the lenght of the intersection between A and B
+    if len(d)<len(sets):
+        print("False")
+# every time "i" increments a new set is taken as an input, since as long as just one set is not a subset of set1 is enough to print False, I control this every time until, if I find it the program will print False and stop.
+        exit()
+print ("True")
+
+
