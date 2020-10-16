@@ -1,0 +1,43 @@
+1)Polar Coordinates
+import cmath
+a=complex(input())
+coords=cmath.polar(a)
+print (coords[0])
+print (coords[1])
+
+2)Find Angle MBC
+from math import*
+AB=float(input())
+BC=float(input())
+tangent=AB/BC
+#The round() function returns a floating point number that is a rounded version of the specified number, with the specified number of decimals. The default number of decimals is 0
+angle=(int(round(degrees(atan(tangent)),0)))
+print (str(angle)+"°")
+
+3)triangle quest
+for i in range(1,int(input())): #More than 2 lines will result in 0 score. Do not leave a blank line also
+    print((10**(i)//9)*i)
+
+4)Triangle Quest 2
+for i in range(1,int(input())+1): #More than 2 lines will result in 0 score. Do not leave a blank line also
+    print ([0,1,121,12321,1234321,123454321,12345654321,1234567654321,123456787654321,12345678987654321][i])
+
+5)Mod divmod
+a, b = int(input()), int(input())
+print(a//b)
+print(a%b)
+print(divmod(a,b))
+
+6)Power - Mod Power
+a=int(input())
+b=int(input())
+m=int(input())
+print(int((pow(a,b))))
+print(int((pow(a,b,m))))
+
+7)Integers Come In All Sizes
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+print (pow(a,b)+pow(c,d))
