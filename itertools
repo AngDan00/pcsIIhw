@@ -1,0 +1,45 @@
+1)itertools.permutations()
+from itertools import permutations
+S = input().split()
+a=sorted(permutations(S[0], int(S[1])))
+for i in a:
+    print (''.join(i))
+    
+2)itertools.combinations()
+from itertools import combinations 
+a=list(input().split()) 
+for i in range(1,int(a[1])+1):     
+    for _ in combinations(sorted(a[0]),i):         
+        print(''.join(_))
+
+3)itertools.combinations_with_replacement()
+from itertools import combinations_with_replacement
+a,n=input().split()
+perm=list(combinations_with_replacement(sorted(a),int(n)))
+for i in perm:
+    print(''.join(i))
+
+4)Compress the string
+from itertools import groupby
+a=groupby(input())
+for d,c in a:
+    print((len(list(c)),int(d)),end=' ')
+    
+5)Iterables and Iterators
+from itertools import*
+a=int(input())
+b=input().split()
+c=int(input())
+d=list(combinations(b,c))
+counter=0
+for i in d:
+    if "a" in i:
+        counter=counter+1
+print(counter/len(d))
+
+6)itertools.product()
+from itertools import*
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+for i in (product(a, b)):
+    print(i,end=' ')
