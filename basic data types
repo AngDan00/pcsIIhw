@@ -1,0 +1,87 @@
+1)List Comprehensions(python 2)
+if __name__ == '__main__':
+    x = int(raw_input())
+    y = int(raw_input())
+    z = int(raw_input())
+    n = int(raw_input())
+    lst=[]
+    for i in range(x+1):
+        for j in range (y+1):
+            for k in range (z+1):
+                if i+j+k != n:
+                    lst.append([i,j,k])
+    print (lst)
+   
+2) find the runner up score(python 2)
+if __name__ == '__main__':
+    n = int(raw_input())
+    arr = map(int, raw_input().split())
+    arr=sorted(set(arr))
+    print arr[-2]
+
+3)Nested lists(python 2)
+a=[]
+b=[]
+c=[]
+for _ in range(int(raw_input())):
+    name = raw_input()
+    score = float(raw_input())
+    a.append([score, name])
+    b.append(score)
+    b=sorted(set(b))
+for i,j in a:
+    if i == b[1]:
+        c.append(j)
+        c=sorted(c)
+for _ in c:
+    print(_)
+    
+4)Finding the percentage(python 2)
+if __name__ == '__main__':
+    n = int(raw_input())
+    student_marks = {}
+    for _ in range(n):
+        line = raw_input().split()
+        name, scores = line[0], line[1:]
+        scores = map(float, scores)
+        student_marks[name] = (scores)
+    query_name = raw_input()
+    voti=(student_marks[query_name])
+    average=(voti[0]+voti[1]+voti[2])/len(scores)
+print(format(average,'.2f'))
+
+5)Lists(python 3)
+if __name__ == '__main__':
+    N=int(input())
+    lst=[]
+for i in range(N):  
+    a=input().split(" ")
+    if a[0]=="insert":
+        lst.insert(int(a[1]),int(a[2]))
+    elif a[0]=="print":
+        print(lst)
+    elif a[0]=="remove":
+        lst.remove(int(a[1]))
+    elif a[0]=="append":
+        lst.append(int(a[1]))
+    elif a[0]=="sort":
+        lst.sort()
+    elif a[0]=="print":
+        print(lst)
+    elif a[0]=="pop":
+        lst.pop()
+    elif a[0]=="reverse":
+        lst.reverse()
+    elif a[0]=="print":
+        print(lst)
+
+6)Tuples (python 3)
+if __name__ == '__main__':
+    n = int(input())
+    integer_list = map(int, input().split())
+    #tuple method is one method to create a tuple 
+    #I fill the tuple t with the element in the integer list 
+    t=tuple(integer_list)
+    print (hash(t))
+  
+
