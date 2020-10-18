@@ -74,4 +74,50 @@ if __name__ == '__main__':
     for string,occurrence in sorted(a, key=lambda c: (-c[1], c[0]))[:3]:
         print(string, occurrence)
        
-     
+6) collection.namedtuple()
+import collections
+n=int(input())
+columns=','.join(input().split())
+student=collections.namedtuple('student',columns)
+sum=0
+for i in range(n):
+    line =input().split()
+    Student=student(*line)
+    sum+=int(Student.MARKS)
+    average=sum/N
+print(average)
+
+7)Collections.deque()
+from collections import*
+a=deque()
+b=int(input())
+for i in range(b):
+    lst=input().split()
+    command=lst[0]
+    if len(lst)>1:
+        n=lst[1]
+    if command=='pop':
+        a.pop()
+    elif command=='append':
+        a.append(n)
+    elif command=='appendleft':
+        a.appendleft(n)
+    elif command=='popleft':
+        a.popleft()
+print(*a)
+
+8)Piling up
+T=int(input())
+for i in range(T):
+    b=input()
+    lst = list(map(int,input().split()))
+    lenght = len(lst)
+    i = 0
+    while i < lenght - 1 and lst[i] >= lst[i+1]:
+        i += 1
+    while i < lenght - 1 and lst[i] <= lst[i+1]:
+        i += 1
+    if i == lenght - 1:
+        print('Yes')
+    else:
+        print('No')
